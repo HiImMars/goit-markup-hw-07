@@ -38,6 +38,9 @@ ol {
 
 img {
   display: block;
+  /* тимчасово */
+  width: 100%;
+  height: auto;
 }
 
 button {
@@ -45,9 +48,25 @@ button {
 }
 
 .container {
-  max-width: 1158px;
+  min-width: 320px;
+  max-width: 428px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+
+  outline: 1px solid red;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 .list {
@@ -71,8 +90,15 @@ button {
 */
 
 .section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .title {
@@ -319,14 +345,27 @@ button {
 
 .advantages-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px 24px;
   align-content: flex-start;
   margin-left: auto;
   margin-right: auto;
 }
 
 .advantages-list-item {
-  width: calc((100%-72px) / 4);
+  width: calc(100% / 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .advantages-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .advantages-list-item {
+    width: calc((100% - 72px) / 4);
+  }
 }
 
 .advantages-icon-wrapper {
@@ -340,11 +379,33 @@ button {
   margin-bottom: 8px;
 }
 
-/* .advantages-list-icon {
-  width: 64px;
-  height: 64px;
-} */
+@media only screen and (max-width: 1157px) {
+  .advantages-icon-wrapper {
+    display: none;
+  }
+}
 
+@media only screen and (max-width: 767px) {
+  .advantages-subtitle {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1157px) {
+  .advantages-subtitle {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-transform: capitalize;
+  }
+}
+
+@media only screen and (max-width: 1157px) {
+  .advantages-subtitle-desc {
+    font-weight: 500;
+  }
+}
 /**
   |============================
   | /Advantages
@@ -358,6 +419,12 @@ button {
 */
 .services {
   padding-top: 0;
+}
+
+@media only screen and (max-width: 1157px) {
+  .services {
+    display: none;
+  }
 }
 
 .services-list {
@@ -380,15 +447,26 @@ button {
   | TEAM
   |============================
 */
+
 .team-list-content-wrapper {
   padding-top: 32px;
   padding-bottom: 32px;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
 .team-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 24px;
+  row-gap: 72px;
+  column-gap: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .team-list {
+    row-gap: 64px;
+  }
 }
 
 .team {
@@ -400,8 +478,21 @@ button {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
-  flex-basis: calc((100% - 72px) / 4);
+  width: 264px;
+  /* flex-basis: calc(100% / 1); */
 }
+/* 
+@media only screen and (min-width: 768px) {
+  .team-list-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .team-list-item {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+} */
 
 .team-name {
   margin-bottom: 8px;
