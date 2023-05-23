@@ -38,8 +38,7 @@ ol {
 
 img {
   display: block;
-  /* тимчасово */
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -52,8 +51,6 @@ button {
   max-width: 428px;
   margin: 0 auto;
   padding: 0 16px;
-
-  outline: 1px solid red;
 }
 
 @media only screen and (min-width: 768px) {
@@ -181,8 +178,19 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  margin-right: 76px;
   padding: 24px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    margin-right: 120px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .logo {
+    margin-right: 76px;
+  }
 }
 
 .logo-text {
@@ -240,20 +248,42 @@ button {
   margin-left: auto;
 }
 
-.contact-info-list {
-  display: flex;
-  gap: 40px;
+@media only screen and (min-width: 1158px) {
+  .contact-info-list {
+    display: flex;
+    gap: 40px;
+  }
 }
 
-.contact-item {
-  padding: 24px 0;
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--secondary-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .contact-list-item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .contact-item {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--secondary-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .contact-item {
+    padding: 24px 0;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--secondary-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .contact-item:hover,
@@ -282,7 +312,7 @@ button {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero/people-office.jpg);
+    url(../images/hero/hero-bg_mob@1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -291,16 +321,88 @@ button {
   margin-right: auto;
 }
 
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-bg_mob@2x.jpg);
+  }
+}
+
+@media only screen and (min-width: 429px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-bg_tab@1x.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/hero-bg_tab@2x.jpg);
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/hero-bg_desc@1x.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/hero-bg_desc@2x.jpg);
+    }
+  }
+}
+
 .hero-title {
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
   color: var(--light-text-color);
-  max-width: 496px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    text-transform: none;
+    max-width: 496px;
+    margin-bottom: 36px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .hero-title {
+    margin-bottom: 48px;
+  }
 }
 
 .modal-btn {
@@ -1010,6 +1112,7 @@ button {
   z-index: 100;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
   background-color: rgba(46, 47, 66, 0.4);
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1027,7 +1130,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 408px;
+  width: 392px;
   min-height: 576px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -1035,6 +1138,12 @@ button {
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 24px 24px 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+  }
 }
 
 .modal-close-btn {
@@ -1248,12 +1357,15 @@ button {
 }
 
 .menu-container {
+  display: flex;
+  flex-direction: column;
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 80px 40px 40px 40px;
+  padding: 80px 35px 40px 40px;
   background-color: var(--primary-bg-color);
   z-index: 999;
 
@@ -1294,16 +1406,51 @@ button {
 }
 
 .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
   padding: 0;
   margin: 0;
+  margin-bottom: auto;
   list-style: none;
 }
 
 .mobile-menu .link {
   display: block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--primary-text-color);
+}
+
+.mobile-menu .mobile-menu-link {
+  color: #404bbf;
+}
+
+.mobile-contacts {
+  margin-bottom: 48px;
+}
+
+.mobile-contacts-tel {
+  display: block;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #4d5ae5;
+}
+
+.mobile-contacts-email {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--secondary-text-color);
 }
 
 .mobile-socials {
